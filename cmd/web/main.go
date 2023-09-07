@@ -16,12 +16,14 @@ import (
 	"github.com/golangcollege/sessions"
 )
 
+// adding new field to the application struct is to make model available to handlers.
 type application struct {
 	errorLog      *log.Logger
 	infoLog       *log.Logger
 	session       *sessions.Session
 	snippets      *mysql.SnippetModel
 	templateCache map[string]*template.Template
+	users         *mysql.UserModel
 }
 
 func main() {
@@ -42,7 +44,8 @@ func main() {
 	}
 	session := sessions.New([]byte(*secret))
 	session.Lifetime = 12 * time.Hour
-	session.Secure = true // Set the Secure flag on our session cookies
+	session.Secure = true
+	session.SameSite = http.SameSiteStrictMode // Set the Secure flag on our session cookies
 	app := &application{
 		errorLog: errorLog,
 
@@ -50,6 +53,7 @@ func main() {
 		session:       session,
 		snippets:      &mysql.SnippetModel{DB: db},
 		templateCache: templateCache,
+		users:         &mysql.UserModel{DB: db},
 	}
 	// Initialize a tls.Config struct to hold the non-default TLS settings we want // the server to use.
 	tlsConfig := &tls.Config{
