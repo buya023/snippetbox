@@ -16,6 +16,10 @@ import (
 	"github.com/golangcollege/sessions"
 )
 
+type contextKey string
+
+const contextKeyIsAuthenticated = contextKey("isAuthenticated")
+
 // adding new field to the application struct is to make model available to handlers.
 type application struct {
 	errorLog      *log.Logger
