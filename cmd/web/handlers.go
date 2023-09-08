@@ -185,7 +185,7 @@ func (app *application) userProfile(w http.ResponseWriter, r *http.Request) {
 		app.serverError(w, err)
 		return
 	}
-	fmt.Fprintf(w, "%+v", user)
+
 	app.render(w, r, "profile.page.tmpl", &templateData{User: user})
 
 }

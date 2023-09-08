@@ -18,7 +18,7 @@ type templateData struct {
 	Snippet         *models.Snippet
 	Snippets        []*models.Snippet
 	Flash           string
-	User            *models.User // Add a User field.
+	User            *models.User
 }
 
 func humanDate(t time.Time) string {

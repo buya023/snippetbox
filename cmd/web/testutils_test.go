@@ -16,6 +16,13 @@ import (
 	"github.com/golangcollege/sessions"
 )
 
+// Create a newTestApplication helper which returns an instance of our // application struct containing mocked dependencies.
+func newTestApplication(t *testing.T) *application {
+	return &application{
+		errorLog: log.New(io.Discard, "", 0), infoLog: log.New(io.Discard, "", 0),
+	}
+}
+
 // Define a regular expression which captures the CSRF token value from the HTML for our
 // user signup page.
 var csrfTokenRX = regexp.MustCompile(`<input type="hidden" name="csrf_token" value="(.+)">`)
@@ -25,6 +32,7 @@ func extractCSRFToken(t *testing.T, body []byte) string {
 	// Note that this returns an array with the entire matched pattern in the first
 	// position, and th values of any captured data in the subsequent positions.
 	matches := csrfTokenRX.FindSubmatch(body)
+
 	if len(matches) < 2 {
 		t.Fatal("no csrf token found in body")
 	}
