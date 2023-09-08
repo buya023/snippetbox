@@ -25,6 +25,7 @@ func TestPing(t *testing.T) {
 	if string(body) != "OK" {
 		t.Errorf("want body to equal %q", "OK")
 	}
+
 }
 
 func TestShowSnippet(t *testing.T) {
