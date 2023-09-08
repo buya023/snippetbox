@@ -10,6 +10,7 @@ import (
 	"os"
 	"time"
 
+	"buyanjargal.tserendendev/snippetbox/pkg/models"
 	"buyanjargal.tserendendev/snippetbox/pkg/models/mysql"
 
 	_ "github.com/go-sql-driver/mysql"
@@ -22,12 +23,23 @@ const contextKeyIsAuthenticated = contextKey("isAuthenticated")
 
 // adding new field to the application struct is to make model available to handlers.
 type application struct {
-	errorLog      *log.Logger
-	infoLog       *log.Logger
-	session       *sessions.Session
-	snippets      *mysql.SnippetModel
+	errorLog *log.Logger
+	infoLog  *log.Logger
+	session  *sessions.Session
+
+	snippets interface {
+		Insert(string, string, string) (int, error)
+		Get(int) (*models.Snippet, error)
+		Latest() ([]*models.Snippet, error)
+	}
 	templateCache map[string]*template.Template
-	users         *mysql.UserModel
+	users         interface {
+		Insert(string, string, string) error
+		Authenticate(string, string) (int, error)
+		Get(int) (*models.User, error)
+		ChangePassword(int, string, string) error
+		//  update the application struct to include the ChangePassword() method that you’ve just created in the users field interface.
+	}
 }
 
 func main() {
