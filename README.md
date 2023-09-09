@@ -16,6 +16,7 @@ The instructions will help you get a copy of the Snippetbox project up and runni
 
 ### Prerequisites
 - Go (version 1.16)
+- MySQL
 
 ### Installation
 1. Clone the repository to your local machine:
