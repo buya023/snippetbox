@@ -9,14 +9,13 @@ Snippetbox is a simple web application that allows users to create, manage, and 
 - Edit and delete existing snippets.
 - User authentication and authorization.
 - Syntax highlighting for code snippets.
-- Search functionality to find specific snippets.
 - User-friendly web interface.
 
 ## Getting Started
 The instructions will help you get a copy of the Snippetbox project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
-- Go (at least version 1.16)
+- Go (version 1.16)
 
 ### Installation
 1. Clone the repository to your local machine:
@@ -27,7 +26,7 @@ The instructions will help you get a copy of the Snippetbox project up and runni
 5. Install the necessary Go dependencies:
 ```go mod tidy```
 6. Run the application:
-```go run cmd/web/*.go```
+```go run cmd/web```
 7. Access the application in your web browser at http://localhost:4000.
 
 ## Acknowledgments
