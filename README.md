@@ -17,8 +17,6 @@ The instructions will help you get a copy of the Snippetbox project up and runni
 
 ### Prerequisites
 - Go (at least version 1.16)
-- PostgreSQL (or your preferred relational database)
-- Git
 
 ### Installation
 1. Clone the repository to your local machine:
