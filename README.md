@@ -20,13 +20,13 @@ The instructions will help you get a copy of the Snippetbox project up and runni
 
 ### Installation
 1. Clone the repository to your local machine:
-<pre>``` git clone https://github.com/buya023/snippetbox.git ```</pre>
+<pre> git clone https://github.com/buya023/snippetbox.git </pre>
 2. Navigate to the project directory:
-<pre>```cd snippetbox ```</pre>
+<pre>cd snippetbox </pre>
 3. Install the necessary Go dependencies:
-<pre>```go mod tidy```</pre>
+<pre>go mod tidy</pre>
 4. Run the application:
-<pre>```go run cmd/web```</pre>
+<pre>go run cmd/web</pre>
 5. Access the application in your web browser at http://localhost:4000.
 
 ## Acknowledgments
