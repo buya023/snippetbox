@@ -15,18 +15,18 @@ Snippetbox is a simple web application that allows users to create, manage, and 
 The instructions will help you get a copy of the Snippetbox project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
-- Go (version 1.16) [installation: ](https://go.dev/doc/install)
+- [Go ](https://go.dev/doc/install) (version 1.16)
 - MySQL
 
 ### Installation
 1. Clone the repository to your local machine:
-``` git clone https://github.com/buya023/snippetbox.git ```
+<pre>``` git clone https://github.com/buya023/snippetbox.git ```</pre>
 2. Navigate to the project directory:
-```cd snippetbox ```
+<pre>```cd snippetbox ```</pre>
 3. Install the necessary Go dependencies:
-```go mod tidy```
+<pre>```go mod tidy```</pre>
 4. Run the application:
-```go run cmd/web```
+<pre>```go run cmd/web```</pre>
 5. Access the application in your web browser at http://localhost:4000.
 
 ## Acknowledgments
