@@ -24,7 +24,7 @@ The instructions will help you get a copy of the Snippetbox project up and runni
 2. Navigate to the project directory:
 <pre>cd snippetbox </pre>
 3. Install the necessary Go dependencies:
-<pre>go mod tidy</pre>
+<pre>go mod download</pre>
 4. Run the application:
 <pre>go run cmd/web</pre>
 5. Access the application in your web browser at http://localhost:4000.
